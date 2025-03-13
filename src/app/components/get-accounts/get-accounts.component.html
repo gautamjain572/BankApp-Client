@@ -1,0 +1,57 @@
+<div class="container mt-4">
+  <h3 class="mb-3 text-center">All Account Holders</h3>
+
+  <!-- Loader -->
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-primary"></div>
+  </div>
+
+  <!-- Table -->
+  <div *ngIf="!isLoading && accounts.length > 0" class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Account Holder</th>
+          <th>Gender</th>
+          <th>Account Number</th>
+          <th>Bank Name</th>
+          <th>Balance (₹)</th>
+          <th>PAN Card</th>
+          <th>Aadhar Card</th>
+          <th>ATM Card Number</th>
+          <th>CVV</th>
+          <th>ATM Pin</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Created Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ account.accountHolderName }}</td>
+          <td>{{ account.gender }}</td>
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ getBankName(account.bankID) }}</td>
+          <td>₹{{ account.balance | number }}</td>
+          <td>{{ account.panCard }}</td>
+          <td>{{ account.aadharCard }}</td>
+          <td>{{ account.atmCardNumber }}</td>
+          <td>{{ account.cvv }}</td>
+          <td>{{ account.atmPin }}</td>
+          <td>{{ account.phoneNumber }}</td>
+          <td>{{ account.email }}</td>
+          <td>{{ account.address }}</td>
+          <td>{{ account.createdDate | date: 'dd-MMM-yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- No Data Message -->
+  <div *ngIf="!isLoading && accounts.length === 0" class="text-center text-danger">
+    No account holders found.
+  </div>
+</div>

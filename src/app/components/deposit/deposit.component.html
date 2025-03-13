@@ -1,0 +1,54 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="card deposit-card shadow-lg">
+    <h3 class="mb-3 text-center text-primary">Deposit Funds</h3>
+    <hr />
+
+    <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+      <!-- Account Number -->
+      <div class="mb-3">
+        <label class="form-label">Account Number</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-credit-card"></i></span>
+          <input type="text" class="form-control" formControlName="accountNumber" placeholder="Enter Account Number" />
+        </div>
+        <div class="text-danger mt-1" *ngIf="depositForm.get('accountNumber')?.invalid && depositForm.get('accountNumber')?.touched">
+          Enter a valid Account Number.
+        </div>
+      </div>
+
+      <!-- Account Holder Name -->
+      <div class="mb-3">
+        <label class="form-label">Account Holder Name</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+          <input type="text" class="form-control" formControlName="accountHolderName" placeholder="Enter Account Holder Name" />
+        </div>
+        <div class="text-danger mt-1" *ngIf="depositForm.get('accountHolderName')?.invalid && depositForm.get('accountHolderName')?.touched">
+          Name must be at least 3 characters.
+        </div>
+      </div>
+
+      <!-- Deposit Amount -->
+      <div class="mb-3">
+        <label class="form-label">Deposit Amount (Min: ₹100)</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-cash-coin"></i></span>
+          <input type="number" class="form-control" formControlName="depositAmount" placeholder="Enter Amount" />
+        </div>
+        <div class="text-danger mt-1" *ngIf="depositForm.get('depositAmount')?.invalid && depositForm.get('depositAmount')?.touched">
+          Minimum deposit should be ₹100.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary w-100 deposit-btn mt-3" [disabled]="isSubmitting || depositForm.invalid">
+        <i class="bi bi-check-circle"></i> {{ isSubmitting ? 'Processing...' : 'Deposit Funds' }}
+      </button>
+    </form>
+
+    <!-- Response Message -->
+    <div *ngIf="responseMessage" class="alert mt-3" [ngClass]="{'alert-success': responseMessage.includes('success'), 'alert-danger': responseMessage.includes('Failed')}">
+      {{ responseMessage }}
+    </div>
+  </div>
+</div>

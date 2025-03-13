@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <div class="row w-100">
+      
+      <!-- Section 1 -->
+      <div class="col border-end text-center">
+        <button class="btn btn-primary m-1" routerLink="/add-bank" routerLinkActive="active">
+          Add Bank
+        </button>
+        <button class="btn btn-primary m-1" routerLink="/get-banks" routerLinkActive="active">
+          Get All Banks
+        </button>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="col border-end text-center">
+        <button class="btn btn-success m-1" routerLink="/create-account" routerLinkActive="active">
+          Create New Account
+        </button>
+        <button class="btn btn-success m-1" routerLink="/get-accounts" routerLinkActive="active">
+          Get All Accounts
+        </button>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="col text-center">
+        <button class="btn btn-warning m-1" routerLink="/deposit" routerLinkActive="active">
+          Deposit
+        </button>
+        <button class="btn btn-warning m-1" routerLink="/withdraw" routerLinkActive="active">
+          Withdraw
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Component Area -->
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

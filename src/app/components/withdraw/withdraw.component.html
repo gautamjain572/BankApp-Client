@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <h2 class="text-center text-primary">Withdraw Amount</h2>
+    <form [formGroup]="withdrawForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">ATM Card Number</label>
+        <input type="text" class="form-control" formControlName="atmCardNumber" placeholder="Enter your 12-digit ATM card number">
+        <div class="text-danger" *ngIf="withdrawForm.get('atmCardNumber')?.invalid && withdrawForm.get('atmCardNumber')?.touched">
+          Enter a valid 12-digit ATM card number.
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">CVV</label>
+          <input type="text" class="form-control" formControlName="cvv" placeholder="Enter CVV">
+          <div class="text-danger" *ngIf="withdrawForm.get('cvv')?.invalid && withdrawForm.get('cvv')?.touched">
+            Enter a valid 3-digit CVV.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">ATM Pin</label>
+          <input type="password" class="form-control" formControlName="atmPin" placeholder="Enter 4-digit PIN">
+          <div class="text-danger" *ngIf="withdrawForm.get('atmPin')?.invalid && withdrawForm.get('atmPin')?.touched">
+            Enter a valid 4-digit PIN.
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Withdrawal Amount</label>
+        <input type="number" class="form-control" formControlName="withdrawalAmount" placeholder="Enter amount">
+        <div class="text-danger" *ngIf="withdrawForm.get('withdrawalAmount')?.invalid && withdrawForm.get('withdrawalAmount')?.touched">
+          Minimum withdrawal amount is 100.
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-success w-100" [disabled]="isSubmitting">Withdraw</button>
+      
+      <div class="text-center mt-3" *ngIf="responseMessage">
+        <p class="text-danger">{{ responseMessage }}</p>
+      </div>
+    </form>
+  </div>

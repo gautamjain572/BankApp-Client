@@ -1,0 +1,33 @@
+.container {
+  min-height: 85vh;
+}
+
+.deposit-card {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.input-group-text {
+  background: #007bff;
+  color: white;
+  border-radius: 6px 0 0 6px;
+}
+
+.deposit-btn {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.alert {
+  font-weight: bold;
+  text-align: center;
+}
