@@ -1,27 +1,109 @@
-# TempApp
+# ✨ BankApp - Angular & .NET 7 Integration ✨
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+BankApp is a web-based banking system built using **Angular 12** for the frontend and **.NET 7** for the backend. It allows users to manage banks, create accounts, deposit, and withdraw money securely. 🏦💳
 
-## Development server
+## Features ✨
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+✅ **Bank Management** - Add and view banks.  
+✅ **Account Management** - Create and view accounts.  
+✅ **Deposit Money** - Deposit funds securely.  
+✅ **Withdraw Money** - Withdraw funds with ATM authentication.  
+✅ **Bootstrap UI** - Clean and responsive design.  
+✅ **Reactive Forms & Validation** - Ensures correct data entry.  
+✅ **REST API Integration** - Connected with .NET 7 backend.
 
-## Code scaffolding
+## Technologies Used 🛠️
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend:** Angular 12, TypeScript, Bootstrap  
+- **Backend:** .NET 7, C#, Entity Framework  
+- **Database:** SQL Server  
+- **HTTP Client:** Angular HttpClient for API communication  
 
-## Build
+## Installation & Setup 🚀
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites 📌
+- Node.js & Angular CLI installed  
+- .NET 7 SDK installed  
+- SQL Server database setup  
 
-## Running unit tests
+### Steps to Run the Project 🏃‍♂️
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1️⃣ **Clone the Repository**  
+```sh
+git clone https://github.com/your-repo/bankapp.git
+cd bankapp
+```
 
-## Running end-to-end tests
+2️⃣ **Install Dependencies**  
+```sh
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3️⃣ **Run Angular App**  
+```sh
+ng serve
+```
 
-## Further help
+4️⃣ **Run .NET Backend**  
+```sh
+dotnet run
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5️⃣ **Open the App** in Browser 🌐
+```
+http://localhost:4200
+```
+
+## Folder Structure 📂
+```
+BankApp/
+│-- src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── header/
+│   │   │   ├── add-bank/
+│   │   │   ├── get-banks/
+│   │   │   ├── create-account/
+│   │   │   ├── get-accounts/
+│   │   │   ├── deposit/
+│   │   │   ├── withdraw/
+│   │   ├── services/
+│   │   │   ├── bank.service.ts
+│   │   │   ├── account.service.ts
+│   │   ├── app-routing.module.ts
+│   │   ├── app.module.ts
+│   ├── assets/
+│   ├── environments/
+│-- backend/
+│   ├── Controllers/
+│   │   ├── BankController.cs
+│   │   ├── AccountController.cs
+│   ├── Models/
+│   ├── Services/
+│   ├── Program.cs
+│   ├── appsettings.json
+│-- README.md
+```
+
+## API Endpoints 🔗
+
+### Bank API 🏦
+- **Add Bank:** `POST /api/Bank/Add-Bank`
+- **Get Banks:** `GET /api/Bank/Get-All-Banks`
+
+### Account API 👤
+- **Create Account:** `POST /api/Account/Add-AccountHolders-details`
+- **Get Accounts:** `GET /api/Account/Get-AccountHolders-details`
+
+### Transactions API 💰
+- **Deposit:** `POST /api/Account/Deposit-Amount`
+- **Withdraw:** `POST /api/Account/Withdraw-Amount`
+
+## Author ✍️
+- **Gautam Jain**  
+- 🔗 [LinkedIn]((https://www.linkedin.com/in/gautamjain572/))
+
+---
+
+🚀 **Happy Coding!** 🎉
+
