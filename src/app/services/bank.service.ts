@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BankService {
+  
   private baseUrl = 'https://localhost:7220/api/bank'; // Base API URL
 
   constructor(private http: HttpClient) {}

@@ -6,7 +6,9 @@ import { BankService } from '../../services/bank.service';
   templateUrl: './get-banks.component.html',
   styleUrls: ['./get-banks.component.css']
 })
+
 export class GetBanksComponent implements OnInit {
+
   banks: any[] = [];
   isLoading = true;
   errorMessage = '';
@@ -29,4 +31,5 @@ export class GetBanksComponent implements OnInit {
       }
     });
   }
+  
 }

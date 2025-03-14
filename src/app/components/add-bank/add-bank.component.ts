@@ -7,7 +7,9 @@ import { BankService } from '../../services/bank.service';
   templateUrl: './add-bank.component.html',
   styleUrls: ['./add-bank.component.css']
 })
+
 export class AddBankComponent implements OnInit {
+
   bankForm: FormGroup;
   isSubmitting = false; // To disable button while submitting
   responseMessage = ''; // To show response message
@@ -51,5 +53,4 @@ export class AddBankComponent implements OnInit {
     });
   }
   
-
 }

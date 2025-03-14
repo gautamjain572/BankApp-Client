@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AccountService {
+
   private baseUrl = 'https://localhost:7220/api/Account';
 
   constructor(private http: HttpClient) {}
@@ -33,4 +35,5 @@ export class AccountService {
   withdrawAmount(withdrawData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/Withdraw-Amount`, withdrawData);
   }
+
 }

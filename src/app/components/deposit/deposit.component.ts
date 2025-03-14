@@ -7,7 +7,9 @@ import { AccountService } from '../../services/account.service';
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.css']
 })
+
 export class DepositComponent implements OnInit {
+
   depositForm: FormGroup;
   isSubmitting = false;
   responseMessage: string = ''; // Message from API
@@ -59,4 +61,5 @@ export class DepositComponent implements OnInit {
       }
     );
   }
+  
 }

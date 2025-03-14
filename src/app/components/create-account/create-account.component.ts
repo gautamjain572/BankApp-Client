@@ -8,7 +8,9 @@ import { BankService } from '../../services/bank.service';
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
+
 export class CreateAccountComponent implements OnInit {
+  
   accountForm!: FormGroup;
   banks: any[] = [];
   isSubmitting = false; // To disable button while submitting

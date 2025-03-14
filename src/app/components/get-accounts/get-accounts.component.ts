@@ -7,7 +7,9 @@ import { BankService } from '../../services/bank.service';
   templateUrl: './get-accounts.component.html',
   styleUrls: ['./get-accounts.component.css']
 })
+
 export class GetAccountsComponent implements OnInit {
+
   accounts: any[] = [];
   banks: any[] = [];
   isLoading = true;
@@ -45,7 +47,7 @@ export class GetAccountsComponent implements OnInit {
       },
       (error) => {
         this.errorMessage = 'Error fetching banks. Please try again.';
-        //console.error('API Error:', error);
+        console.error('API Error:', error);
         this.isLoading = false;
       }
     );
@@ -55,4 +57,5 @@ export class GetAccountsComponent implements OnInit {
     const bank = this.banks.find(b => b.bankID === bankID);
     return bank ? bank.bankName : 'Unknown Bank';
   }
+
 }

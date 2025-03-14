@@ -7,7 +7,9 @@ import { AccountService } from '../../services/account.service';
   templateUrl: './withdraw.component.html',
   styleUrls: ['./withdraw.component.css']
 })
+
 export class WithdrawComponent implements OnInit {
+
   withdrawForm!: FormGroup;
   isSubmitting = false;
   responseMessage = '';
@@ -42,4 +44,5 @@ export class WithdrawComponent implements OnInit {
       }
     ).add(() => this.isSubmitting = false);
   }
+  
 }
