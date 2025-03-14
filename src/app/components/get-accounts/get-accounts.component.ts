@@ -11,6 +11,7 @@ export class GetAccountsComponent implements OnInit {
   accounts: any[] = [];
   banks: any[] = [];
   isLoading = true;
+  errorMessage = '';
 
   constructor(private accountService: AccountService, private bankService: BankService) {}
 
@@ -43,7 +44,8 @@ export class GetAccountsComponent implements OnInit {
         this.isLoading = false;
       },
       (error) => {
-        console.error('API Error:', error);
+        this.errorMessage = 'Error fetching banks. Please try again.';
+        //console.error('API Error:', error);
         this.isLoading = false;
       }
     );

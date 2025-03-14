@@ -6,6 +6,10 @@
     <div class="spinner-border text-primary"></div>
   </div>
 
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
   <!-- Table -->
   <div *ngIf="!isLoading && accounts.length > 0" class="table-responsive">
     <table class="table table-bordered table-hover">

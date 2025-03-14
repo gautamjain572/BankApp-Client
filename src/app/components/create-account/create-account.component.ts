@@ -66,7 +66,6 @@ export class CreateAccountComponent implements OnInit {
     this.accountService.addAccountHolder(formData).subscribe({
       next: (response: any) => {
         //console.log("API Response: ", response);
-  
         if (response.suceess) {
           this.responseMessage = response.message; // Set message from API
           this.alertClass = 'alert-success'; // Set success style
@@ -75,18 +74,15 @@ export class CreateAccountComponent implements OnInit {
           this.responseMessage = response.message || "Something went wrong!";
           this.alertClass = 'alert-danger'; // Set error style
         }
-  
         this.isSubmitting = false;
       },
       error: (error) => {
-        console.error("API Error: ", error);
+        //console.error("API Error: ", error);
         this.responseMessage = 'Error creating account. Please try again.';
         this.alertClass = 'alert-danger';
         this.isSubmitting = false;
       }
     });
   }
-  
-  
   
 }

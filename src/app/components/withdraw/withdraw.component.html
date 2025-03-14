@@ -34,7 +34,7 @@
         </div>
       </div>
       
-      <button type="submit" class="btn btn-success w-100" [disabled]="isSubmitting">Withdraw</button>
+      <button type="submit" class="btn btn-success w-100" [disabled]="isSubmitting || withdrawForm.invalid">Withdraw</button>
       
       <div class="text-center mt-3" *ngIf="responseMessage">
         <p class="text-danger">{{ responseMessage }}</p>

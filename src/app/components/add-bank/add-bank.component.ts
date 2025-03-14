@@ -10,6 +10,7 @@ import { BankService } from '../../services/bank.service';
 export class AddBankComponent implements OnInit {
   bankForm: FormGroup;
   isSubmitting = false; // To disable button while submitting
+  responseMessage = ''; // To show response message
 
   constructor(private fb: FormBuilder, private bankService: BankService) {
     this.bankForm = this.fb.group({
@@ -24,22 +25,31 @@ export class AddBankComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    if (this.bankForm.invalid) {
-      return;
-    }
-    
+    if (this.bankForm.invalid) return;
+  
     this.isSubmitting = true;
+    this.responseMessage = '';
+  
     this.bankService.addBank(this.bankForm.value).subscribe({
       next: (response) => {
-        alert('Bank added successfully!');
-        this.bankForm.reset(); // Clear form after submission
+        if (response.suceess) {
+          this.responseMessage = response.message;
+          alert(response.message); // Show success message
+          this.bankForm.reset(); // Clear form after successful submission
+        } else {
+          this.responseMessage = 'Error: ' + response.message || "Something went wrong!";
+          alert('Error: ' + response.message || "Something went wrong!"); // Show error message if success is false
+        }
       },
       error: (error) => {
-        alert('Error adding bank. Please try again.');
+        this.responseMessage = 'Error: ' + error.error.message;
+        alert('Error: ' + error.error.message); // Show API error message
       },
       complete: () => {
         this.isSubmitting = false;
       }
     });
   }
+  
+
 }

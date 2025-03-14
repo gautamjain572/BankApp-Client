@@ -165,7 +165,7 @@
                     </div> -->
 
                     <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || accountForm.invalid">
                         {{ isSubmitting ? 'Submitting...' : 'Create Account' }}
                     </button>
 
