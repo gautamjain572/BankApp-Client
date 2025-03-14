@@ -1,109 +1,36 @@
-# ✨ BankApp - Angular & .NET 7 Integration ✨
+# 📌 BankApp - Installation & Setup Guide
 
-BankApp is a web-based banking system built using **Angular 12** for the frontend and **.NET 7** for the backend. It allows users to manage banks, create accounts, deposit, and withdraw money securely. 🏦💳
+## 🚀 Live Angular Project
+✅ **Open the live Angular project on Vercel:**  
+🔗 [Click here to access BankApp Client](https://bank-app-client.vercel.app/)
 
-## Features ✨
+## 🛠️ Clone .NET Backend Repository
+✅ **Clone the BankApp .NET Backend repository:**  
+🔗 [Click here to clone BankApp Backend](https://github.com/gautamjain572/BankApp-Client)
 
-✅ **Bank Management** - Add and view banks.  
-✅ **Account Management** - Create and view accounts.  
-✅ **Deposit Money** - Deposit funds securely.  
-✅ **Withdraw Money** - Withdraw funds with ATM authentication.  
-✅ **Bootstrap UI** - Clean and responsive design.  
-✅ **Reactive Forms & Validation** - Ensures correct data entry.  
-✅ **REST API Integration** - Connected with .NET 7 backend.
-
-## Technologies Used 🛠️
-
-- **Frontend:** Angular 12, TypeScript, Bootstrap  
-- **Backend:** .NET 7, C#, Entity Framework  
-- **Database:** SQL Server  
-- **HTTP Client:** Angular HttpClient for API communication  
-
-## Installation & Setup 🚀
-
-### Prerequisites 📌
-- Node.js & Angular CLI installed  
-- .NET 7 SDK installed  
-- SQL Server database setup  
-
-### Steps to Run the Project 🏃‍♂️
-
-1️⃣ **Clone the Repository**  
 ```sh
-git clone https://github.com/your-repo/bankapp.git
-cd bankapp
+git clone https://github.com/gautamjain572/BankApp-Client.git
+cd BankApp-Client
 ```
 
-2️⃣ **Install Dependencies**  
-```sh
-npm install
+## 🏦 Setup Database in SQL Server
+✅ **Create a new database in SQL Server** and run the required commands:  
+🔗 [Click here to access SQL commands & stored procedures](https://github.com/gautamjain572/SQL-Server-Management-Studio/blob/main/BankApp%20DummyData.sql)
+
+### Steps:
+1. Open **SQL Server Management Studio (SSMS)**
+2. Create a new database named `BankApp`
+3. Execute all SQL commands and stored procedures from the above link
+
+## 🔧 Configure Connection Strings
+✅ **Update Connection Strings in .NET project:**
+1. Open **appsettings.json** in the .NET project
+2. Replace the default connection string with your own SQL Server details
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=BankApp;Trusted_Connection=True;"
+}
 ```
 
-3️⃣ **Run Angular App**  
-```sh
-ng serve
-```
-
-4️⃣ **Run .NET Backend**  
-```sh
-dotnet run
-```
-
-5️⃣ **Open the App** in Browser 🌐
-```
-http://localhost:4200
-```
-
-## Folder Structure 📂
-```
-BankApp/
-│-- src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── header/
-│   │   │   ├── add-bank/
-│   │   │   ├── get-banks/
-│   │   │   ├── create-account/
-│   │   │   ├── get-accounts/
-│   │   │   ├── deposit/
-│   │   │   ├── withdraw/
-│   │   ├── services/
-│   │   │   ├── bank.service.ts
-│   │   │   ├── account.service.ts
-│   │   ├── app-routing.module.ts
-│   │   ├── app.module.ts
-│   ├── assets/
-│   ├── environments/
-│-- backend/
-│   ├── Controllers/
-│   │   ├── BankController.cs
-│   │   ├── AccountController.cs
-│   ├── Models/
-│   ├── Services/
-│   ├── Program.cs
-│   ├── appsettings.json
-│-- README.md
-```
-
-## API Endpoints 🔗
-
-### Bank API 🏦
-- **Add Bank:** `POST /api/Bank/Add-Bank`
-- **Get Banks:** `GET /api/Bank/Get-All-Banks`
-
-### Account API 👤
-- **Create Account:** `POST /api/Account/Add-AccountHolders-details`
-- **Get Accounts:** `GET /api/Account/Get-AccountHolders-details`
-
-### Transactions API 💰
-- **Deposit:** `POST /api/Account/Deposit-Amount`
-- **Withdraw:** `POST /api/Account/Withdraw-Amount`
-
-## Author ✍️
-- **Gautam Jain**  
-- 🔗 [LinkedIn]((https://www.linkedin.com/in/gautamjain572/))
-
----
-
-🚀 **Happy Coding!** 🎉
-
+✅ **You're all set! 🎉 Now, run the .NET backend and start testing the API.** 🚀
